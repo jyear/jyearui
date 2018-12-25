@@ -16,7 +16,7 @@ const generateIndex = function(entries) {
     if (entries && typeof entries === "object") {
         for (var key in entries) {
             let name = key.replace(/\-/gi, "");
-            str += `import ${name} from "./dist/${key}/index.js";\r\n export const ${tranformStr1(
+            str += `import ${name} from "./dist/${key}/index.js";\r\nexport const ${tranformStr1(
                 key
             )}=${name};\r`;
         }
