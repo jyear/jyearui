@@ -1,4 +1,4 @@
 declare module "jyearui" {
-    export let Name: any;
+    export let Input: InputProps;
     export let Button: ButtonProps;
 }
