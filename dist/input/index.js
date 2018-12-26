@@ -91,45 +91,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./lib/index.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./lib/input/index.tsx");
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./lib/button/index.less":
-/*!*******************************!*\
-  !*** ./lib/button/index.less ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack://jyearui/./lib/button/index.less?");
-
-/***/ }),
-
-/***/ "./lib/button/index.tsx":
-/*!******************************!*\
-  !*** ./lib/button/index.tsx ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nvar __extends = this && this.__extends || function () {\n  var _extendStatics = function extendStatics(d, b) {\n    _extendStatics = Object.setPrototypeOf || {\n      __proto__: []\n    } instanceof Array && function (d, b) {\n      d.__proto__ = b;\n    } || function (d, b) {\n      for (var p in b) {\n        if (b.hasOwnProperty(p)) d[p] = b[p];\n      }\n    };\n\n    return _extendStatics(d, b);\n  };\n\n  return function (d, b) {\n    _extendStatics(d, b);\n\n    function __() {\n      this.constructor = d;\n    }\n\n    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n  };\n}();\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar React = __webpack_require__(/*! react */ \"react\");\n\nvar classnames_1 = __webpack_require__(/*! classnames */ \"./node_modules/classnames/index.js\");\n\n__webpack_require__(/*! ./index.less */ \"./lib/button/index.less\");\n\nvar Button = function (_super) {\n  __extends(Button, _super);\n\n  function Button(props) {\n    return _super.call(this, props) || this;\n  }\n\n  Button.prototype.onClick = function () {\n    var onClick = this.props.onClick;\n\n    if (onClick && typeof onClick === \"function\") {\n      onClick();\n    }\n  };\n\n  Button.prototype.render = function () {\n    var _a = this.props,\n        children = _a.children,\n        title = _a.title,\n        type = _a.type,\n        className = _a.className,\n        style = _a.style;\n    return React.createElement(\"div\", {\n      onClick: this.onClick.bind(this),\n      className: classnames_1.default(\"jyear-button\", type, className),\n      style: style\n    }, children ? children : title);\n  };\n\n  Button.defaultProps = {\n    type: \"default\",\n    children: null,\n    title: null,\n    className: \"\",\n    onClick: null,\n    style: null\n  };\n  return Button;\n}(React.Component);\n\nexports.default = Button;\n\n//# sourceURL=webpack://jyearui/./lib/button/index.tsx?");
-
-/***/ }),
-
-/***/ "./lib/index.ts":
-/*!**********************!*\
-  !*** ./lib/index.ts ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar index_1 = __webpack_require__(/*! ./button/index */ \"./lib/button/index.tsx\");\n\nvar index_2 = __webpack_require__(/*! ./input/index */ \"./lib/input/index.tsx\");\n\nexports.default = {\n  Button: index_1.default,\n  Input: index_2.default\n};\n\n//# sourceURL=webpack://jyearui/./lib/index.ts?");
-
-/***/ }),
 
 /***/ "./lib/input/index.less":
 /*!******************************!*\

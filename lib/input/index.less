@@ -1,0 +1,24 @@
+@import "../../less/index.less";
+.jyear-input {
+    display: inline-block;
+    height: 30px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    .jyear-input-inner {
+        border-radius: 3px;
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        position: relative;
+        top: -1px;
+        padding: 0 10px;
+        border: 1px solid @grey;
+        line-height: 20px;
+        transition: all 0.3s ease-in-out;
+        &:focus {
+            border: 1px solid @linght-primary;
+            box-shadow: 0 0 5px @linght-primary;
+        }
+    }
+}
