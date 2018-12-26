@@ -11,7 +11,8 @@ class Button extends React.Component<ButtonProps> {
         children: null,
         title: null,
         className: "",
-        onClick: null
+        onClick: null,
+        style: null
     };
     public onClick() {
         let { onClick } = this.props;
@@ -20,11 +21,12 @@ class Button extends React.Component<ButtonProps> {
         }
     }
     render() {
-        let { children, title, type, className } = this.props;
+        let { children, title, type, className, style } = this.props;
         return (
             <div
                 onClick={this.onClick.bind(this)}
                 className={classnames("jyear-button", type, className)}
+                style={style}
             >
                 {children ? children : title}
             </div>

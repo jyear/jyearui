@@ -24,17 +24,18 @@ function getIPAdress() {
 
 module.exports = {
     mode: "development",
-    entry: path.join(__dirname, "./src/index.tsx"),
+    entry: {
+        app: path.join(__dirname, "./src/index.tsx")
+    },
     output: {
         filename: "[name]/index.js",
         path: path.resolve(__dirname, "./dev")
-        //libraryTarget: "commonjs2"
     },
     resolve: {
         extensions: [".js", ".json", ".jsx", ".tsx", ".ts", ".less", ".css"]
     },
     devServer: {
-        contentBase: path.join(__dirname, "../dist"),
+        contentBase: path.join(__dirname, "../dev"),
         historyApiFallback: false,
         host: getIPAdress(),
         port: 8112,

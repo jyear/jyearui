@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const fs = require("fs");
@@ -13,26 +14,41 @@ function tranformStr1(str) {
 }
 const generateIndex = function(entries) {
     let str = "";
+    let nameObj = {};
     if (entries && typeof entries === "object") {
-        for (var key in entries) {
-            let name = key.replace(/\-/gi, "");
-            str += `import ${name} from "./dist/${key}/index.js";\r\nexport const ${tranformStr1(
-                key
-            )}=${name};\r`;
-        }
+        str += 'import jyearui from "./dist/index";\r\n';
+        entries.map(item => {
+            str += `export const ${tranformStr1(item)}=jyearui["${tranformStr1(
+                item
+            )}"];\r\n`;
+        });
     }
     fs.writeFileSync(path.join(rootPath, "./index.js"), str);
 };
-
 const readDir = function() {
     let names = fs.readdirSync(path.join(rootPath, "./lib"));
     let result = {};
+    let nameArr = [];
     if (names && names.length > 0) {
         names.map(item => {
-            result[item] = path.join(rootPath, `./lib/${item}/index.tsx`);
+            let isDir = fs
+                .statSync(path.join(rootPath, `./lib/${item}`))
+                .isDirectory();
+            if (isDir) {
+                result[item + "/index"] = path.join(
+                    rootPath,
+                    `./lib/${item}/index.tsx`
+                );
+                nameArr.push(item);
+            } else {
+                result[item.substr(0, item.lastIndexOf("."))] = path.join(
+                    rootPath,
+                    `./lib/${item}`
+                );
+            }
         });
     }
-    generateIndex(result);
+    generateIndex(nameArr);
     return result;
 };
 
@@ -43,12 +59,13 @@ module.exports = {
         extensions: [".js", ".json", ".jsx", ".tsx", ".ts", ".less", ".css"]
     },
     externals: {
-        React: "react"
+        react: "react"
     },
     output: {
-        filename: "[name]/index.js",
+        filename: "[name].js",
         path: path.resolve(__dirname, "./dist"),
-        libraryTarget: "commonjs2"
+        library: "jyearui",
+        libraryTarget: "umd"
     },
     module: {
         rules: [
@@ -67,7 +84,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin("./[name]/index.css"),
-        new ExtractTextPlugin("./index.css")
+        new ExtractTextPlugin("./[name].css")
+        //new ExtractTextPlugin("../index.css")
     ]
 };

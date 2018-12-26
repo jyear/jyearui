@@ -1,13 +1,13 @@
 {
     "name": "jyearui",
-    "version": "1.0.4",
+    "version": "1.0.8",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "compile": "webpack --config webpack.dll.config.js",
         "es6": "cross-env NODE_ENV=production npx babel src --copy-files --extensions .js,.jsx --out-dir lib",
         "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.development.config.js --watch",
-        "build:dev": "cross-env NODE_ENV=development webpack --watch"
+        "build:dev": "cross-env NODE_ENV=development webpack --color --watch"
     },
     "author": "",
     "license": "ISC",

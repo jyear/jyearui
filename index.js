@@ -1,3 +1,3 @@
-import button from "./dist/button/index.js";
-export const Button=button;import name from "./dist/name/index.js";
-export const Name=name;
+import jyearui from "./dist/index";
+export const Button=jyearui["Button"];
+export const Name=jyearui["Name"];
