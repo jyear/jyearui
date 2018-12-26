@@ -10,7 +10,6 @@ class Input extends React.Component<InputProps, InputState> {
         type: "text",
         onChange: null
     };
-
     public changeEvent(e: any) {
         let { onChange } = this.props;
         if (onChange && typeof onChange == "function") {
