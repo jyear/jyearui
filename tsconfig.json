@@ -9,13 +9,13 @@
         "target": "es5",
         "jsx": "preserve",
         "strictNullChecks": false,
-        "typeRoots": ["./node_modules/@types", "./lib"],
+        "typeRoots": ["./node_modules/@types", "./lib", "./@types"],
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
         "lib": ["es2015", "es2016", "es2017", "es2018", "dom"],
         "baseUrl": "."
     },
     "file": [".ts", ".tsx", ".js", ".jsx"],
-    "include": ["./lib", "./src", "./@types"],
+    "include": ["./lib", "./src"],
     "exclude": ["./node_modules"]
 }
