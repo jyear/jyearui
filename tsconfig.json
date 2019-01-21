@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "outDir": "./domedist",
         "sourceMap": true,
         "noImplicitAny": true,
         "removeComments": true,
