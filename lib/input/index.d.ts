@@ -6,5 +6,5 @@ interface InputProps {
     onChange?: Function | void;
 }
 interface InputState {
-    value?: string | number;
+    value?: string | number | void;
 }

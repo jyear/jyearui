@@ -1,0 +1,37 @@
+.jyear-switch {
+    width: 44px;
+    height: 26px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 0 2px #ccc inset;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    vertical-align: middle;
+    &.open {
+        background: rgb(2, 204, 46);
+        .jyear-btn {
+            left: 20px;
+        }
+    }
+    &.disabled {
+        background: #e7e6e6 !important;
+        .jyear-btn {
+            left: 2px !important;
+            background: rgb(236, 235, 235) !important;
+        }
+    }
+    .jyear-btn {
+        height: 22px;
+        width: 22px;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0 5px #a4a4a4;
+        transition: all 0.3s ease-in-out;
+    }
+}

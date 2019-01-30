@@ -17,6 +17,7 @@
   line-height: 20px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
 }
 .jyear-input .jyear-input-inner:focus {
   border: 1px solid #47a6ff;
