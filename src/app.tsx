@@ -26,10 +26,9 @@ export default class App extends React.Component {
                     }}
                     style={{ marginRight: "10px" }}
                 >
-                    测试232323
+                    测试
                 </Button>
                 <Input value={value} onChange={this.InputChange.bind(this)} />
-                {/* <div>sdsds</div> */}
                 <Switch
                     value={isOpen}
                     onChange={this.changeSwitch.bind(this)}
